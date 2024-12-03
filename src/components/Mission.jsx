@@ -15,9 +15,6 @@ const Mission = () => {
               <div className="absolute w-full inset-0 flex items-center justify-center  tracking-tighter lg:text-3xl">
                 <p className="max-w-lg">{MISSION}</p>
               </div>
-              {/* <div className="w-1/3 flex-shrink-0">
-                <img src={CUSINES.image} alt={CUSINES.title} className="h-auto rounded-3xl"></img>
-              </div> */}
             </div>
         </div>
     </section>
