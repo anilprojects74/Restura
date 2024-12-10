@@ -13,7 +13,7 @@ function Navbar() {
     event.preventDefault();
     const targetElement = document.getElementById(targetId);
     if(targetElement){
-      const offsetTop = targetElement.offsetTop -50;
+      const offsetTop = targetElement.offsetTop -100;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth"
