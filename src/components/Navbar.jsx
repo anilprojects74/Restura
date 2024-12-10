@@ -10,10 +10,15 @@ function Navbar() {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
 
   const handleScroll = (event, targetId) => {
-    event.preventDefault();
+    event?.preventDefault();
     const targetElement = document.getElementById(targetId);
     if(targetElement){
-      const offsetTop = targetElement.offsetTop -100;
+      let offsetTop
+      if(targetId == "hero"){
+         offsetTop = targetElement.offsetTop;
+      } else {
+         offsetTop = targetElement.offsetTop -100;
+      }
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth"
@@ -26,7 +31,7 @@ function Navbar() {
     <nav className="fixed top-4 z-50  flex w-full flex-col items-center">
       <div className=" flex w-full items-center justify-between overflow-y-hidden  p-4 backdrop-blur-lg
         lg:m-2 lg:w-[50rem] lg:rounded-full lg:shadow-lg">
-        <img src={logo} alt="logo" width={80} height={2}></img>
+        <img src={logo} alt="logo" width={80} height={2} onClick={(e) => handleScroll(e, "hero")} className="cursor-pointer"></img>
         <div className="hidden space-x-6 lg:flex">
           { 
             LINKS.map((link, index) => (
